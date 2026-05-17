@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video AI Mastery — Jimeng AI & Seedance 2.0 | ARBA Digital Empire</title>
+<meta name="description" content="Panduan lengkap buat video AI viral terus dari phone korang. Seedance 2.0 + Jimeng AI. Harga pelancaran RM29 sahaja untuk 100 orang pertama!">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:       #08080F;
+  --bg2:      #0F0F1C;
+  --bg3:      #141428;
+  --purple:   #7B5EA7;
+  --violet:   #9B5DE5;
+  --pink:     #F15BB5;
+  --gold:     #FFD60A;
+  --gold2:    #FFBE0B;
+  --teal:     #00BBF9;
+  --green:    #00F5D4;
+  --red:      #FF3366;
+  --white:    #FFFFFF;
+  --off:      #E8E8F4;
+  --muted:    #9090B0;
+  --border:   rgba(123,94,167,0.25);
+  --radius:   16px;
+  --font-h:   'Bebas Neue', sans-serif;
+  --font-b:   'Plus Jakarta Sans', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--off);
+  font-family:var(--font-b);
+  overflow-x:hidden;
+  line-height:1.65;
+}
+
+/* ── NOISE OVERLAY ─────────────────────────────────── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.4;
+}
+
+/* ── GLOBAL CONTAINERS ─────────────────────────────── */
+.wrap{max-width:860px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+section{position:relative;z-index:1}
+
+/* ── GLOW BLOBS ────────────────────────────────────── */
+.blob{
+  position:absolute;border-radius:50%;filter:blur(120px);
+  pointer-events:none;z-index:0;
+}
+
+/* ── TOPBAR ─────────────────────────────────────────── */
+.topbar{
+  background:rgba(8,8,15,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.topbar-brand{
+  font-family:var(--font-h);
+  font-size:1.2rem;letter-spacing:.08em;
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.topbar-cta{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;font-weight:800;font-size:.8rem;
+  padding:9px 20px;border-radius:50px;
+  text-decoration:none;letter-spacing:.04em;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 0 20px rgba(255,214,10,.35);
+  white-space:nowrap;
+}
+.topbar-cta:hover{transform:translateY(-2px);box-shadow:0 4px 30px rgba(255,214,10,.55)}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero{
+  min-height:100svh;
+  display:flex;align-items:center;
+  padding:80px 0 60px;
+  overflow:hidden;
+  position:relative;
+}
+.hero .blob:nth-child(1){width:500px;height:500px;background:var(--violet);opacity:.18;top:-100px;left:-150px}
+.hero .blob:nth-child(2){width:400px;height:400px;background:var(--pink);opacity:.14;bottom:0;right:-100px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(155,93,229,.15);
+  border:1px solid rgba(155,93,229,.4);
+  border-radius:50px;padding:7px 18px;
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;
+  color:var(--violet);margin-bottom:24px;
+  animation:fadeUp .7s ease both;
+}
+.hero-badge span{background:var(--violet);color:#fff;border-radius:50px;padding:2px 10px;font-size:.7rem}
+.hero h1{
+  font-family:var(--font-h);
+  font-size:clamp(3rem,9vw,5.5rem);
+  line-height:.95;letter-spacing:.02em;
+  margin-bottom:10px;
+  animation:fadeUp .7s .1s ease both;
+}
+.hero h1 .line1{
+  display:block;
+  background:linear-gradient(135deg,#fff 0%,var(--off) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero h1 .line2{
+  display:block;
+  background:linear-gradient(135deg,var(--violet) 0%,var(--pink) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  font-size:1.1rem;color:var(--muted);max-width:580px;
+  margin-bottom:36px;
+  animation:fadeUp .7s .2s ease both;
+}
+.hero-sub strong{color:var(--off)}
+.hero-phones{
+  display:flex;gap:10px;align-items:center;
+  margin-bottom:36px;flex-wrap:wrap;
+  animation:fadeUp .7s .25s ease both;
+}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  border-radius:50px;padding:7px 16px;
+  font-size:.8rem;font-weight:700;
+}
+.pill-purple{background:rgba(155,93,229,.15);border:1px solid rgba(155,93,229,.35);color:var(--violet)}
+.pill-pink{background:rgba(241,91,181,.12);border:1px solid rgba(241,91,181,.35);color:var(--pink)}
+.pill-teal{background:rgba(0,187,249,.12);border:1px solid rgba(0,187,249,.35);color:var(--teal)}
+.pill-green{background:rgba(0,245,212,.12);border:1px solid rgba(0,245,212,.35);color:var(--green)}
+.pill-gold{background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);color:var(--gold)}
+
+/* Price Hero Block */
+.price-hero{
+  background:linear-gradient(135deg,rgba(155,93,229,.12),rgba(241,91,181,.08));
+  border:1px solid rgba(155,93,229,.3);
+  border-radius:var(--radius);
+  padding:28px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+  animation:fadeUp .7s .3s ease both;
+  max-width:580px;
+}
+.price-block{}
+.price-original{
+  font-size:.85rem;color:var(--muted);
+  text-decoration:line-through;margin-bottom:2px;
+}
+.price-now{
+  font-family:var(--font-h);
+  font-size:3.4rem;letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+}
+.price-note{font-size:.78rem;color:var(--pink);font-weight:700;margin-top:4px}
+.cta-main{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);
+  color:#000;font-weight:800;font-size:1rem;
+  padding:16px 36px;border-radius:50px;
+  text-decoration:none;letter-spacing:.03em;
+  box-shadow:0 0 40px rgba(255,214,10,.4);
+  transition:transform .25s,box-shadow .25s;
+  white-space:nowrap;
+}
+.cta-main:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 50px rgba(255,214,10,.6)}
+
+/* ── COUNTDOWN ───────────────────────────────────────── */
+.countdown-strip{
+  background:linear-gradient(90deg,#0F0F1C,rgba(155,93,229,.15),#0F0F1C);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:20px;text-align:center;
+}
+.countdown-label{font-size:.8rem;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;text-transform:uppercase}
+.countdown-timer{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.time-block{text-align:center}
+.time-num{
+  font-family:var(--font-h);font-size:2.8rem;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;display:block;
+}
+.time-lbl{font-size:.65rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.time-sep{font-family:var(--font-h);font-size:2.5rem;color:var(--border);align-self:flex-start;padding-top:2px}
+
+/* ── STOCK INDICATOR ─────────────────────────────────── */
+.stock-bar-wrap{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 24px;
+  max-width:560px;margin:0 auto;text-align:center;
+}
+.stock-bar-label{font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.stock-bar{background:rgba(255,255,255,.08);border-radius:50px;height:12px;overflow:hidden}
+.stock-bar-fill{
+  height:100%;border-radius:50px;
+  background:linear-gradient(90deg,var(--green),var(--teal));
+  transition:width .8s ease;
+}
+.stock-count{font-size:.82rem;color:var(--pink);font-weight:700;margin-top:10px}
+
+/* ── SECTION HEADERS ─────────────────────────────────── */
+.sec-header{text-align:center;margin-bottom:50px}
+.sec-label{
+  display:inline-block;
+  font-size:.72rem;letter-spacing:.14em;font-weight:700;text-transform:uppercase;
+  color:var(--violet);margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--font-h);font-size:clamp(2rem,5vw,3rem);
+  line-height:1;letter-spacing:.02em;color:var(--white);
+}
+.sec-title span{
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.sec-desc{color:var(--muted);font-size:.95rem;max-width:520px;margin:.9rem auto 0}
+
+/* ── PAIN SECTION ────────────────────────────────────── */
+.pain{padding:80px 0;background:var(--bg)}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.pain-card{
+  background:linear-gradient(135deg,rgba(255,51,102,.06),rgba(255,51,102,.02));
+  border:1px solid rgba(255,51,102,.2);
+  border-radius:var(--radius);padding:24px;
+}
+.pain-icon{font-size:1.6rem;margin-bottom:12px}
+.pain-card h4{font-size:.95rem;font-weight:700;color:var(--off);margin-bottom:6px}
+.pain-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+/* ── WHAT IS ─────────────────────────────────────────── */
+.whatis{padding:80px 0;background:var(--bg2)}
+.whatis .blob:nth-child(1){width:350px;height:350px;background:var(--teal);opacity:.1;top:50%;left:-100px;transform:translateY(-50%)}
+.product-card{
+  background:linear-gradient(135deg,rgba(155,93,229,.1),rgba(241,91,181,.06));
+  border:1px solid rgba(155,93,229,.25);
+  border-radius:24px;padding:40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+}
+@media(max-width:580px){.product-card{grid-template-columns:1fr}}
+.product-thumb{
+  background:linear-gradient(135deg,#1a1a2e,#2a1a4a);
+  border-radius:16px;aspect-ratio:3/4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:1px solid rgba(155,93,229,.3);
+  position:relative;overflow:hidden;
+}
+.product-thumb::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,rgba(155,93,229,.3),transparent 60%);
+}
+.thumb-icon{font-size:4rem;position:relative;z-index:1;margin-bottom:8px}
+.thumb-title{font-family:var(--font-h);font-size:1.6rem;text-align:center;
+  background:linear-gradient(135deg,#fff,var(--off));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  position:relative;z-index:1;padding:0 16px}
+.thumb-sub{font-size:.75rem;color:var(--muted);position:relative;z-index:1;margin-top:4px}
+.thumb-badge{
+  position:absolute;top:12px;right:12px;z-index:2;
+  background:var(--gold);color:#000;
+  font-size:.65rem;font-weight:800;padding:4px 10px;border-radius:50px;letter-spacing:.05em;
+}
+.product-info h3{
+  font-family:var(--font-h);font-size:1.8rem;
+  background:linear-gradient(135deg,var(--white),var(--off));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:16px;line-height:1.1;
+}
+.product-info p{font-size:.9rem;color:var(--muted);margin-bottom:20px;line-height:1.7}
+.include-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.include-list li{
+  display:flex;align-items:flex-start;gap:10px;font-size:.88rem;
+}
+.include-list li::before{
+  content:'✓';flex-shrink:0;
+  width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green),var(--teal));
+  color:#000;font-size:.7rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+
+/* ── CHAPTERS ────────────────────────────────────────── */
+.chapters{padding:80px 0;background:var(--bg)}
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ch-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;
+  transition:border-color .25s,transform .25s;
+  cursor:default;
+}
+.ch-card:hover{border-color:rgba(155,93,229,.6);transform:translateY(-4px)}
+.ch-num{
+  font-family:var(--font-h);font-size:2.2rem;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;margin-bottom:8px;
+}
+.ch-card h4{font-size:.92rem;font-weight:700;color:var(--off);margin-bottom:6px}
+.ch-card p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.ch-bonus{
+  background:linear-gradient(135deg,rgba(255,214,10,.1),rgba(255,190,11,.06));
+  border-color:rgba(255,214,10,.3);
+}
+.ch-bonus .ch-num{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ── WHO IS IT FOR ───────────────────────────────────── */
+.who{padding:80px 0;background:var(--bg2)}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.who-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;text-align:center;
+}
+.who-emoji{font-size:2.2rem;margin-bottom:10px}
+.who-card h4{font-size:.9rem;font-weight:700;color:var(--off);margin-bottom:6px}
+.who-card p{font-size:.8rem;color:var(--muted)}
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+.testi{padding:80px 0;background:var(--bg)}
+.testi .blob:nth-child(1){width:300px;height:300px;background:var(--pink);opacity:.12;top:50%;right:-80px;transform:translateY(-50%)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.testi-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;
+}
+.stars{color:var(--gold);font-size:.9rem;margin-bottom:12px}
+.testi-text{font-size:.88rem;color:var(--off);line-height:1.7;margin-bottom:16px;font-style:italic}
+.testi-text::before{content:'"';font-size:1.2rem;color:var(--violet)}
+.testi-text::after{content:'"';font-size:1.2rem;color:var(--violet)}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0;
+}
+.testi-name{font-size:.82rem;font-weight:700;color:var(--off)}
+.testi-handle{font-size:.74rem;color:var(--muted)}
+
+/* ── BONUS ───────────────────────────────────────────── */
+.bonus{padding:80px 0;background:var(--bg2)}
+.bonus-card{
+  background:linear-gradient(135deg,rgba(255,214,10,.08),rgba(255,190,11,.04));
+  border:2px solid rgba(255,214,10,.3);
+  border-radius:24px;padding:36px;
+  display:flex;gap:28px;align-items:flex-start;
+  flex-wrap:wrap;
+}
+.bonus-icon-wrap{
+  flex-shrink:0;
+  width:72px;height:72px;border-radius:16px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+}
+.bonus-info h3{
+  font-family:var(--font-h);font-size:1.6rem;color:var(--gold);
+  margin-bottom:8px;
+}
+.bonus-info p{font-size:.9rem;color:var(--muted);line-height:1.7;max-width:480px}
+
+/* ── GUARANTEE ───────────────────────────────────────── */
+.guarantee{padding:60px 0;background:var(--bg)}
+.guarantee-inner{
+  max-width:620px;margin:0 auto;
+  background:linear-gradient(135deg,rgba(0,245,212,.06),rgba(0,187,249,.04));
+  border:1px solid rgba(0,245,212,.25);
+  border-radius:24px;padding:36px;
+  display:flex;gap:24px;align-items:flex-start;
+  flex-wrap:wrap;
+}
+.guarantee-icon{font-size:2.8rem;flex-shrink:0}
+.guarantee-text h3{font-family:var(--font-h);font-size:1.5rem;color:var(--green);margin-bottom:8px}
+.guarantee-text p{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq{padding:80px 0;background:var(--bg2)}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:680px;margin:0 auto}
+.faq-item{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.faq-q{
+  width:100%;background:none;border:none;
+  padding:20px 24px;text-align:left;cursor:pointer;
+  color:var(--off);font-family:var(--font-b);font-size:.92rem;font-weight:700;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq-q:hover{color:var(--violet)}
+.faq-arrow{font-size:1rem;color:var(--violet);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+  font-size:.86rem;color:var(--muted);line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 24px 20px}
+
+/* ── FINAL CTA ───────────────────────────────────────── */
+.final-cta{
+  padding:100px 0;background:var(--bg);
+  text-align:center;overflow:hidden;position:relative;
+}
+.final-cta .blob:nth-child(1){width:600px;height:600px;background:var(--violet);opacity:.15;top:50%;left:50%;transform:translate(-50%,-50%)}
+.final-cta .blob:nth-child(2){width:300px;height:300px;background:var(--pink);opacity:.12;top:20%;right:5%}
+.final-cta h2{
+  font-family:var(--font-h);font-size:clamp(2.5rem,7vw,4.5rem);
+  line-height:1;letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--white),var(--off));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:12px;
+}
+.final-cta h2 span{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.final-cta p{color:var(--muted);font-size:1rem;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-box{
+  background:linear-gradient(135deg,rgba(155,93,229,.12),rgba(241,91,181,.08));
+  border:1px solid rgba(155,93,229,.3);
+  border-radius:24px;padding:40px;
+  max-width:500px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.cta-price-row{display:flex;align-items:baseline;gap:16px}
+.cta-old{font-size:1.1rem;color:var(--muted);text-decoration:line-through}
+.cta-new{font-family:var(--font-h);font-size:4rem;letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.cta-for{font-size:.82rem;color:var(--pink);font-weight:700}
+.cta-btn{
+  width:100%;display:block;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);
+  color:#000;font-weight:800;font-size:1.1rem;
+  padding:18px 36px;border-radius:50px;
+  text-decoration:none;letter-spacing:.03em;
+  box-shadow:0 0 50px rgba(255,214,10,.45);
+  transition:transform .25s,box-shadow .25s;
+  text-align:center;
+}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 60px rgba(255,214,10,.65)}
+.cta-secure{font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:6px;justify-content:center}
+.cta-slots{
+  background:rgba(255,51,102,.1);border:1px solid rgba(255,51,102,.25);
+  border-radius:50px;padding:8px 20px;font-size:.8rem;color:var(--pink);font-weight:700;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:32px 20px;text-align:center;
+}
+footer p{font-size:.78rem;color:var(--muted);line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--violet)}
+
+/* ── DIVIDER ─────────────────────────────────────────── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0}
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.pulse{animation:pulse 2s infinite}
+
+/* ── SCROLL REVEAL ───────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ──────────────────────────────────────────── */
+@media(max-width:480px){
+  .topbar-cta{padding:8px 14px;font-size:.72rem}
+  .price-hero{padding:20px}
+  .cta-main{padding:14px 28px;font-size:.9rem}
+  .bonus-card{flex-direction:column}
+  .guarantee-inner{flex-direction:column}
+  .hero h1{font-size:3.2rem}
+}
+@media(max-width:640px){.viproof [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important}.viproof [style*="grid-template-columns:repeat(auto-fit,minmax(280px"]{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-brand">ARBA DIGITAL EMPIRE</div>
+  <a href="#beli" class="topbar-cta">Dapatkan RM29 →</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="wrap">
+    <div class="hero-badge">
+      <span>🔥 PELANCARAN HARI INI</span>
+      Penawaran Khas Terhad
+    </div>
+    <h1>
+      <span class="line1">KUASAI VIDEO AI</span>
+      <span class="line2">DARI PHONE KORANG</span>
+    </h1>
+    <p class="hero-sub">
+      Panduan paling lengkap untuk buat video AI viral guna <strong>Jimeng AI & Seedance 2.0</strong> — terus dari iPhone atau Android korang. Tanpa PC. Tanpa kamera.
+    </p>
+    <div class="hero-phones">
+      <span class="pill pill-purple">📱 iPhone & Android</span>
+      <span class="pill pill-teal">🎬 Seedance 2.0</span>
+      <span class="pill pill-pink">🤖 Custom GPT Bonus</span>
+      <span class="pill pill-green">✅ 12 Bab + Bonus</span>
+      <span class="pill pill-gold">⭐ Edisi 2026</span>
+    </div>
+    <div class="price-hero">
+      <div class="price-block">
+        <div class="price-original">Harga asal: RM49</div>
+        <div class="price-now">RM29</div>
+        <div class="price-note pulse">⏰ Harga pelancaran — 100 orang sahaja!</div>
+      </div>
+      <a href="#beli" class="cta-main">Dapatkan Sekarang →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-strip">
+  <div class="countdown-label">⚡ Tawaran berakhir dalam</div>
+  <div class="countdown-timer">
+    <div class="time-block"><span class="time-num" id="cd-h">23</span><div class="time-lbl">JAM</div></div>
+    <div class="time-sep">:</div>
+    <div class="time-block"><span class="time-num" id="cd-m">59</span><div class="time-lbl">MINIT</div></div>
+    <div class="time-sep">:</div>
+    <div class="time-block"><span class="time-num" id="cd-s">47</span><div class="time-lbl">SAAT</div></div>
+  </div>
+</div>
+
+<!-- STOCK INDICATOR -->
+<section style="padding:40px 0;background:var(--bg)">
+  <div class="wrap">
+    <div class="stock-bar-wrap">
+      <div class="stock-bar-label">📊 Slot harga RM29 yang tinggal</div>
+      <div class="stock-bar"><div class="stock-bar-fill" id="stock-fill" style="width:63%"></div></div>
+      <div class="stock-count pulse" id="stock-text">🔴 Hanya <strong>37 slot</strong> lagi pada harga RM29 — selepas itu harga kembali ke RM49!</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">⚠️ Adakah korang rasa macam ni?</div>
+      <h2 class="sec-title">Penat <span>Cuba Buat</span> Video Viral</h2>
+      <p class="sec-desc">Ramai creator Malaysia dah cuba tapi masih konfius dengan tool AI ni</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">😩</div>
+        <h4>"Dah download app tapi tak tau nak buat apa"</h4>
+        <p>Interface dalam bahasa Cina, tak faham nak start dari mana, hilang arah.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">💸</div>
+        <h4>"Kredit habis tapi video tak jadi macam yang nak"</h4>
+        <p>Prompt tak betul, video pelik, kredit percuma dah habis sia-sia.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🤯</div>
+        <h4>"Watak bertukar dalam setiap video"</h4>
+        <p>Character drift — muka lain-lain dalam setiap klip. Tak boleh buat siri video.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🐢</div>
+        <h4>"Tengok video orang lain best, tapi macam mana dia buat?"</h4>
+        <p>Tak tahu cara salin gaya prompt creator lain. Idea ada tapi tak tahu nak execute.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT IS -->
+<section class="whatis">
+  <div class="blob"></div>
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">💡 Penyelesaiannya</div>
+      <h2 class="sec-title">Panduan <span>Lengkap & Praktikal</span></h2>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-thumb">
+        <div class="thumb-badge">EDISI 2026</div>
+        <div class="thumb-icon">🎬</div>
+        <div class="thumb-title">VIDEO AI MASTERY</div>
+        <div class="thumb-sub">Jimeng AI & Seedance 2.0</div>
+      </div>
+      <div class="product-info">
+        <h3>ARBA Digital Empire Presents</h3>
+        <p>Panduan langkah demi langkah yang ditulis khas untuk creator Malaysia — dari cara install Douyin, setup avatar, sampai buat video viral yang boleh tular.</p>
+        <ul class="include-list">
+          <li>12 Bab kandungan penuh dalam BM</li>
+          <li>Panduan install untuk iPhone & Android</li>
+          <li>Tutorial Character Sheet & Environment Sheet</li>
+          <li>Formula Prompt 6 Bahagian</li>
+          <li>Workflow Solo & Collab</li>
+          <li>BONUS: Custom GPT Penjana Prompt Eksklusif</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHAPTERS -->
+<section class="chapters">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">📚 Apa yang korang dapat</div>
+      <h2 class="sec-title">12 Bab + <span>Bonus Eksklusif</span></h2>
+      <p class="sec-desc">Setiap bab direka untuk bawa korang dari sifar ke video AI yang bersedia untuk viral</p>
+    </div>
+    <div class="ch-grid">
+      <div class="ch-card reveal">
+        <div class="ch-num">01</div>
+        <h4>Ekosistem Seedance</h4>
+        <p>Faham hubungan antara Douyin, Jimeng AI & Seedance 2.0 sebelum mulakan.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">02</div>
+        <h4>Panduan Install</h4>
+        <p>Cara install Douyin & Jimeng AI di iPhone dan Android. APKPure + tukar region.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">03</div>
+        <h4>Flow Login Betul</h4>
+        <p>Urutan tepat untuk log masuk dan buka semua fungsi. Silap order = feature terkunci.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">04</div>
+        <h4>Antara Muka Phone</h4>
+        <p>3 skrin utama Jimeng AI — Profile, Video Feed, dan Tetingkap Penjanaan.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">05</div>
+        <h4>Teks kepada Video</h4>
+        <p>Jana klip sinematik dari ayat sahaja. Setting ratio, tempoh, resolusi.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">06</div>
+        <h4>Gambar kepada Video</h4>
+        <p>Hidupkan foto dengan gerakan AI. Mod Multimodal dengan sehingga 12 fail rujukan.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">07</div>
+        <h4>Character Sheet</h4>
+        <p>Bina watak konsisten untuk siri video. Manusia & produk — template boleh guna semula.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">08</div>
+        <h4>Environment Sheet</h4>
+        <p>Cipta lokasi & latar yang konsisten. Dunia nyata, fantasi, dan paparan produk.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">09</div>
+        <h4>Workflow Video Solo</h4>
+        <p>Pipeline lengkap dari idea kosong hingga klip siap muat turun — seorang diri.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">10</div>
+        <h4>Workflow Video Collab</h4>
+        <p>Pipeline dua creator. Siri watak konsisten merentasi berbilang episod.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">11</div>
+        <h4>Kuasai Prompt</h4>
+        <p>Formula 6 bahagian: Subjek, Tindakan, Latar, Kamera, Gaya, Kualiti.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">12</div>
+        <h4>Tips & Trik Pro</h4>
+        <p>10 tabiat yang beza creator biasa dengan creator yang dapat keputusan konsisten.</p>
+      </div>
+      <div class="ch-card ch-bonus reveal">
+        <div class="ch-num">★ BONUS</div>
+        <h4>Custom GPT Penjana Prompt</h4>
+        <p>Custom GPT eksklusif yang tukar mana-mana imej kepada prompt Seedance 2.0 yang lengkap — terus dengan timestamp, pergerakan kamera & gaya visual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO IS IT FOR -->
+<section class="who">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">🎯 Untuk siapa ini?</div>
+      <h2 class="sec-title">Panduan Ini <span>Untuk Korang</span></h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <div class="who-emoji">📲</div>
+        <h4>Content Creator TikTok & Reels</h4>
+        <p>Nak video cinematic tapi tak ada kamera mahal. AI handle visuals, korang handle strategi.</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-emoji">🛒</div>
+        <h4>Seller TikTok Shop & Shopee</h4>
+        <p>Nak video produk yang pro tanpa bayar videographer. Jana 10 variasi dalam sejam.</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-emoji">💼</div>
+        <h4>Pemilik Bisnes Kecil</h4>
+        <p>Buat iklan video sendiri tanpa bergantung kepada agency. Jimat kos, kawal kreativiti.</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-emoji">🎓</div>
+        <h4>Pemula Yang Baru Nak Cuba</h4>
+        <p>Langkah demi langkah dari mula. Tak perlu pengalaman video sebelum ini.</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-emoji">🎮</div>
+        <h4>Creator Anime / Game Content</h4>
+        <p>Buat siri video watak konsisten dengan character sheet & environment sheet khusus.</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-emoji">✈️</div>
+        <h4>Travel & Lifestyle Creator</h4>
+        <p>Cipta B-roll cinematic guna AI untuk tampung footage yang kurang semasa travel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="blob"></div>
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">💬 Apa kata mereka</div>
+      <h2 class="sec-title">Creator Malaysia <span>Dah Cuba</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Dah lama scroll TikTok tengok video AI orang lain, ingat susah. Lepas baca panduan ni, dalam 30 minit je dah berjaya buat video pertama. Character sheet tu game changer!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FA</div>
+          <div>
+            <div class="testi-name">Farah Aina</div>
+            <div class="testi-handle">@farahaina.content · Selangor</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Yang paling best tu Custom GPT bonus! Sekarang aku upload je gambar produk, dia auto generate prompt lengkap dengan timestamp. Jimat masa gila. ROI dari RM29 ni memang berbaloi.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ZH</div>
+          <div>
+            <div class="testi-name">Zulhilmi</div>
+            <div class="testi-handle">@zulhilmi.seller · Kedah</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Sebelum ni habis kredit percuma tapi video jadi pelik. Rupanya masalah kat prompt je. Formula 6 bahagian dalam panduan ni memang betul-betul ubah cara aku buat video AI.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">NR</div>
+          <div>
+            <div class="testi-name">Nur Raihana</div>
+            <div class="testi-handle">@raihana.creative · Johor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BONUS -->
+<section class="bonus">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">🎁 Nilai tambah</div>
+      <h2 class="sec-title">Bonus <span>Eksklusif</span> Untuk Pembeli</h2>
+    </div>
+    <div class="bonus-card reveal">
+      <div class="bonus-icon-wrap">🤖</div>
+      <div class="bonus-info">
+        <h3>Custom GPT — Seedance 2.0 Prompt Builder</h3>
+        <p>Akses kepada Custom GPT eksklusif yang dibina khas untuk Seedance 2.0. Upload sebarang gambar — watak, produk, atau lokasi — dan ia akan jana prompt video lengkap dengan urutan timestamp, pergerakan kamera, gerakan subjek, dan gaya visual. Terus boleh guna dalam Jimeng AI atau Dreamina. Nilai sebenar: Percuma untuk pembeli ebook sahaja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="guarantee-inner reveal">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <h3>JAMINAN KEPUASAN</h3>
+        <p>Panduan ini ditulis berdasarkan pengalaman sebenar creator Malaysia. Setiap langkah telah diuji menggunakan Jimeng AI dan Seedance 2.0 yang sebenar. Jika korang ikut panduan ni dengan betul dan tak dapat buat video pertama korang, hubungi kami dan kami akan bantu secara peribadi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-label">❓ Soalan lazim</div>
+      <h2 class="sec-title">Korang Nak <span>Tanya Apa?</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Adakah Jimeng AI percuma? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Ya! Jimeng AI dan Dreamina (versi antarabangsa) menawarkan kredit percuma setiap hari sekadar dengan log masuk. Korang boleh jana sehingga 5 video percuma setiap hari. Panduan ini mengajar cara maksimumkan kredit percuma korang.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Perlu ke pasang Jimeng AI jika ada CapCut? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Tidak semestinya. Panduan ini merangkumi 3 cara akses: Jimeng AI (melalui APKPure), Dreamina (laman web global), dan CapCut (App Store/Play Store). Korang boleh pilih yang paling sesuai dengan device dan lokasi korang.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Dalam format apa panduan ini? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Panduan dihantar dalam format DOCX (Microsoft Word) yang boleh dibuka di mana-mana device — phone, tablet, atau komputer. Korang juga boleh edit dan isi Character Sheet & Environment Sheet template terus dalam fail yang sama.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Berapa lama selepas bayar boleh dapat akses? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Serta-merta! Selepas pembayaran melalui OnPay disahkan, link muat turun akan dihantar terus ke e-mel korang. Biasanya dalam masa beberapa minit sahaja.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apa tu Custom GPT Bonus? Perlu bayar ChatGPT Plus ke? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Custom GPT adalah ChatGPT yang telah dikonfigurasi khas untuk jana prompt Seedance 2.0. Untuk guna Custom GPT, korang perlukan akaun ChatGPT Plus (GPT-4o). Namun pautan Custom GPT boleh diakses secara percuma — hanya fungsi create GPT baru yang perlukan Plus. Korang boleh terus guna pautan yang kami bagi.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Harga RM29 ni untuk berapa lama? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Harga RM29 adalah harga pelancaran khas untuk 100 orang pertama sahaja. Selepas slot habis atau tempoh pelancaran tamat, harga akan kembali ke RM49. Tiada tarikh pasti — ikut mana yang lebih cepat.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VIDEO PROOF -->
+<section class="viproof" style="padding:80px 0;background:var(--bg2);position:relative;overflow:hidden">
+  <div class="blob" style="width:400px;height:400px;background:var(--violet);opacity:.1;top:-100px;right:-100px"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-header reveal">
+      <div class="sec-label">🎬 Bukti Sebenar</div>
+      <h2 class="sec-title">Video AI Yang Dibuat <span>Guna Panduan Ini</span></h2>
+      <p class="sec-desc">Bukan sekadar teori — ini video sebenar yang dah dijana menggunakan teknik dalam panduan ini</p>
+    </div>
+
+    <!-- HERO VIDEO — 2 JUTA TONTONAN -->
+    <div class="reveal" style="margin-bottom:36px">
+      <div style="
+        background:linear-gradient(135deg,rgba(255,214,10,.12),rgba(255,190,11,.06));
+        border:2px solid rgba(255,214,10,.5);
+        border-radius:24px;
+        padding:28px;
+        position:relative;
+        overflow:hidden;
+      ">
+        <!-- Glow effect -->
+        <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:300px;height:200px;background:rgba(255,214,10,.15);filter:blur(60px);pointer-events:none"></div>
+
+        <!-- Badge 2M -->
+        <div style="
+          display:inline-flex;align-items:center;gap:8px;
+          background:linear-gradient(135deg,var(--gold),var(--gold2));
+          color:#000;font-weight:800;font-size:.8rem;letter-spacing:.06em;
+          padding:8px 20px;border-radius:50px;
+          margin-bottom:20px;
+          box-shadow:0 0 30px rgba(255,214,10,.5);
+        ">
+          🏆 &nbsp;2,000,000+ TONTONAN &nbsp;·&nbsp; VIDEO PERTAMA SAYA
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
+          <!-- Instagram Embed -->
+          <div style="border-radius:16px;overflow:hidden;background:#000">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DYEa0QGRT47/"
+              data-instgrm-version="14"
+              style="background:#FFF;border:0;border-radius:16px;box-shadow:none;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+            </blockquote>
+          </div>
+          <!-- Caption -->
+          <div>
+            <div style="font-family:var(--font-h);font-size:clamp(1.8rem,4vw,2.8rem);line-height:1;margin-bottom:16px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">
+              2 JUTA<br>TONTONAN
+            </div>
+            <p style="color:var(--off);font-size:.95rem;line-height:1.7;margin-bottom:16px">
+              Video pertama yang saya buat menggunakan teknik dalam panduan ini — <strong>tanpa kamera, tanpa studio, terus dari phone</strong>.
+            </p>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.7;margin-bottom:20px">
+              Guna Character Sheet + Environment Sheet + Formula Prompt 6 Bahagian yang ada dalam ebook ini. Semua teknik yang sama korang akan pelajari.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px;font-size:.85rem">
+                <span style="background:rgba(255,214,10,.15);border:1px solid rgba(255,214,10,.35);color:var(--gold);border-radius:50px;padding:4px 14px;font-weight:700;white-space:nowrap">✓ Seedance 2.0</span>
+                <span style="color:var(--muted)">Model yang sama korang akan guna</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:.85rem">
+                <span style="background:rgba(0,245,212,.12);border:1px solid rgba(0,245,212,.35);color:var(--green);border-radius:50px;padding:4px 14px;font-weight:700;white-space:nowrap">✓ 100% Phone</span>
+                <span style="color:var(--muted)">Tiada PC, tiada kamera mahal</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:.85rem">
+                <span style="background:rgba(155,93,229,.15);border:1px solid rgba(155,93,229,.35);color:var(--violet);border-radius:50px;padding:4px 14px;font-weight:700;white-space:nowrap">✓ Custom GPT</span>
+                <span style="color:var(--muted)">Prompt dijana automatik</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 MORE VIDEOS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <!-- Video 2 -->
+      <div class="reveal" style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:20px;
+        padding:20px;
+      ">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--violet)"></div>
+          <span style="font-size:.78rem;font-weight:700;color:var(--violet);letter-spacing:.08em">CONTOH VIDEO</span>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:14px">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DYWozf5xuk_/"
+            data-instgrm-version="14"
+            style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+          </blockquote>
+        </div>
+        <p style="font-size:.82rem;color:var(--muted);line-height:1.6">
+          Teknik multimodal dengan Character Sheet — watak konsisten merentasi berbilang klip.
+        </p>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="reveal" style="
+        background:var(--bg3);
+        border:1px solid var(--border);
+        border-radius:20px;
+        padding:20px;
+      ">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--pink)"></div>
+          <span style="font-size:.78rem;font-weight:700;color:var(--pink);letter-spacing:.08em">CONTOH VIDEO</span>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:14px">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DXsdFgBk5hO/"
+            data-instgrm-version="14"
+            style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+          </blockquote>
+        </div>
+        <p style="font-size:.82rem;color:var(--muted);line-height:1.6">
+          Environment Sheet + Formula Prompt — hasilkan video sinematik terus dari phone.
+        </p>
+      </div>
+    </div>
+
+    <!-- Social Proof Strip -->
+    <div class="reveal" style="
+      margin-top:32px;
+      background:linear-gradient(135deg,rgba(155,93,229,.08),rgba(241,91,181,.05));
+      border:1px solid rgba(155,93,229,.2);
+      border-radius:var(--radius);
+      padding:20px 28px;
+      display:flex;align-items:center;justify-content:center;gap:32px;
+      flex-wrap:wrap;text-align:center;
+    ">
+      <div>
+        <div style="font-family:var(--font-h);font-size:2rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">2M+</div>
+        <div style="font-size:.73rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Tontonan</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border)"></div>
+      <div>
+        <div style="font-family:var(--font-h);font-size:2rem;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">100%</div>
+        <div style="font-size:.73rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Dibuat Dari Phone</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border)"></div>
+      <div>
+        <div style="font-family:var(--font-h);font-size:2rem;background:linear-gradient(135deg,var(--green),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">RM0</div>
+        <div style="font-size:.73rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Kos Pengeluaran</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border)"></div>
+      <div>
+        <div style="font-family:var(--font-h);font-size:2rem;background:linear-gradient(135deg,var(--pink),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">Viral</div>
+        <div style="font-size:.73rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Teknik Yang Sama</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Load Instagram embed script -->
+<script async defer src="https://www.instagram.com/embed.js"></script>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="beli">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Korang Tunggu Apa <span>Lagi?</span></h2>
+      <p>100 slot sahaja pada harga RM29. Selepas tu, harga balik RM49. Buat keputusan sekarang.</p>
+      <div class="cta-box">
+        <div class="cta-slots pulse">🔴 Slot terhad — <span id="slots-left">37</span> lagi pada harga RM29</div>
+        <div class="cta-price-row">
+          <div class="cta-old">RM49</div>
+          <div class="cta-new">RM29</div>
+        </div>
+        <div class="cta-for">Harga Pelancaran — Hari Ini Sahaja</div>
+        <a href="https://digitalempirearba.onpay.my/order/form/aiseedancemastery" target="_blank" class="cta-btn">
+          ⚡ DAPATKAN SEKARANG — RM29
+        </a>
+        <div class="cta-secure">🔒 Pembayaran selamat melalui OnPay · FPX / Kad Kredit / e-Wallet</div>
+        <div style="font-size:.76rem;color:var(--muted);text-align:center;">Akses serta-merta selepas pembayaran · Format DOCX · Custom GPT included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2026 ARBA Digital Empire · Semua hak terpelihara<br>
+    <a href="mailto:as.enterpriseglobal@gmail.com">as.enterpriseglobal@gmail.com</a> ·
+    Instagram: <a href="https://instagram.com/ammarr_anwar" target="_blank">@ammarr_anwar</a> ·
+    Facebook: <a href="#" target="_blank">ARBA Digital Empire</a><br>
+    <small>Untuk pertanyaan produk, hubungi kami melalui e-mel atau DM Instagram.</small>
+  </p>
+</footer>
+
+<script>
+// ── COUNTDOWN TIMER ─────────────────────────────────────────────
+(function(){
+  const END_KEY = 'arba_cd_end';
+  let endTime = localStorage.getItem(END_KEY);
+  if(!endTime){
+    endTime = Date.now() + 23*3600*1000 + 59*60*1000 + 47*1000;
+    localStorage.setItem(END_KEY, endTime);
+  }
+  function tick(){
+    const diff = +endTime - Date.now();
+    if(diff <= 0){
+      document.getElementById('cd-h').textContent='00';
+      document.getElementById('cd-m').textContent='00';
+      document.getElementById('cd-s').textContent='00';
+      return;
+    }
+    const h = Math.floor(diff/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+
+// ── STOCK COUNTER ────────────────────────────────────────────────
+(function(){
+  const STOCK_KEY = 'arba_slots';
+  let slots = +localStorage.getItem(STOCK_KEY) || 37;
+  // Slowly decrease slots for urgency
+  function updateStock(){
+    const fill = document.getElementById('stock-fill');
+    const text = document.getElementById('stock-text');
+    const slotsEl = document.getElementById('slots-left');
+    const pct = Math.round((slots/100)*100);
+    const fillPct = 100 - pct;
+    if(fill) fill.style.width = fillPct + '%';
+    if(text) text.innerHTML = `🔴 Hanya <strong>${slots} slot</strong> lagi pada harga RM29 — selepas itu harga kembali ke RM49!`;
+    if(slotsEl) slotsEl.textContent = slots;
+  }
+  updateStock();
+  // Decrease by 1 every ~4 minutes (simulate purchases)
+  setInterval(()=>{
+    if(slots > 1){
+      slots--;
+      localStorage.setItem(STOCK_KEY, slots);
+      updateStock();
+    }
+  }, 240000);
+})();
+
+// ── FAQ TOGGLE ───────────────────────────────────────────────────
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ── SCROLL REVEAL ────────────────────────────────────────────────
+(function(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+})();
+
+// ── SMOOTH CTA PULSES ────────────────────────────────────────────
+setInterval(()=>{
+  document.querySelectorAll('.cta-btn,.cta-main').forEach(btn=>{
+    btn.style.transform='scale(1.025)';
+    setTimeout(()=>btn.style.transform='',300);
+  });
+},4000);
+</script>
+</body>
+</html>
